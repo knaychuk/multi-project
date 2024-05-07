@@ -1,13 +1,16 @@
 import Image from 'next/image'
+import Link from 'next/navigation'
 
-const ProjectCard = ({ title, img, date }) => {
+const ProjectCard = ({ title, img, date, url }) => {
   return (
-    <div className="outline-red-500 outline-1 outline mx-2 p-36 relative">
-      <Image src="/testImage.png" fill priority/>
-      <div className='absolute bg-blue-500 bottom-2 right-4'>
-        <h1 className=' bg-blue-500'>{title}</h1>
-        <h2>Completed: </h2>
+    <div className="outline-black outline-3 outline p-36 relative">
+      <a href={url}>
+      <Image src={img} alt="Mines Game" fill priority/>
+      <div className='absolute bg-white p-5 w-full bottom-0 right-0 text-center'>
+        <h1 className='text-2xl'>{title}</h1>
+        <h2 className='text-lg'>Completed: </h2>
       </div>
+      </a>
     </div> 
   )
 }
