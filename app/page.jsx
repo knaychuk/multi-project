@@ -1,11 +1,17 @@
 'use client'
 
 import GameProjects from "@/components/GameProjects";
-
 import TechnicalProjects from "@/components/TechnicalProjects";
+
+import { useTheme } from 'next-themes'
 
 
 export default function Home() {
+  const { setTheme, resolvedTheme } = useTheme()
+
+  if(resolvedTheme === 'dark') {
+    setTheme('light');
+  }
 
   return (
     <main className="flex flex-col items-center bg-white">
