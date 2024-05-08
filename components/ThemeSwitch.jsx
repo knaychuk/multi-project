@@ -18,11 +18,11 @@ const ThemeSwitch = () => {
   )
 
   if(resolvedTheme === 'dark') {
-    return <button onClick={() => setTheme('light')}><Image src="/RockPaperScissors/rock.png" width={36} height={36} /></button>
+    return <button onClick={() => setTheme('light')}><Image src="/DarkLightMode/light.png" width={100} height={100} /></button>
   }
 
   if(resolvedTheme ==='light') {
-    return <button onClick={() => setTheme('dark')}><Image src="/RockPaperScissors/scissors.png" width={36} height={36} /></button>
+    return <button onClick={() => setTheme('dark')}><Image src="/DarkLightMode/dark.png" width={100} height={100} /></button>
   }
 }
 export default ThemeSwitch
