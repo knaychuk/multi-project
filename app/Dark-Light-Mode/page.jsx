@@ -10,18 +10,20 @@ import ThemeSwitch from '@/components/ThemeSwitch'
 const DarkLightMode = () => {
   const[colorTheme, setColorTheme] = useState('');
   const[navTheme, setNavTheme] = useState('');
+  const[arrowTheme, setArrowTheme] = useState('');
   const { setTheme, resolvedTheme } = useTheme();
 
   useEffect(() => {
     if(resolvedTheme === 'dark') {
       setNavTheme('bg-slate-900 text-white');
       setColorTheme('bg-slate-800 text-white');
-  
+      setArrowTheme('/inverted-back-arrow.png');
     }
   
     if(resolvedTheme === 'light') {
       setNavTheme('bg-orange-300 text-black');
-      setColorTheme('bg-white text-black')
+      setColorTheme('bg-white text-black');
+      setArrowTheme('/back-arrow.png');
     }
   
   }, [resolvedTheme])
@@ -38,7 +40,7 @@ const DarkLightMode = () => {
       </nav>
       <main className={`${colorTheme} relative`}>
       <a href="/" className='justify-center items-center'>
-        <Image src="/back-arrow.png" alt="" width={50} height={50} className="absolute left-5 top-0 hover:size-14 cursor-pointer"/>
+        <Image src={arrowTheme} alt="" width={50} height={50} className="absolute left-5 top-0 hover:size-14 cursor-pointer"/>
       </a>
       <h1 className="text-4xl text-center mt-6">Dark/Light Mode</h1>
       <h2 className="mt-2 text-gray-500 text-center">Click icon below</h2>
