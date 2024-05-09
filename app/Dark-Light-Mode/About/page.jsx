@@ -31,7 +31,7 @@ const About = () => {
   }, [resolvedTheme])
   return (
     <div className={`${colorTheme} h-screen`}>
-      <Navbar navTheme={navTheme} linkText1={'Home'}/>
+      <Navbar navTheme={navTheme} linkUrl={''} linkText1={'Home'}/>
       <a href="/Dark-Light-Mode" >
         <Image src={arrowTheme} alt="" width={50} height={50} className="absolute left-6 top-24 hover:size-14 cursor-pointer"/>
       </a>
