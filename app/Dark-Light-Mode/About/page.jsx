@@ -37,7 +37,7 @@ const About = () => {
       </a>
       <div className={`${colorTheme} my-4 mx-24`}>
       <h1 className={`${colorTheme} text-6xl pb-6 border-b-8`}>About</h1>
-      <p className="text-2xl mt-2">Dark/Light Mode is persistent on any page you visit!</p>
+      <p className="text-2xl mt-2">Dark/Light Mode is persistent on other pages you visit!</p>
       </div>
     </div>
   )
