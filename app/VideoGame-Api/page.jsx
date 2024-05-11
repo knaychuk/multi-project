@@ -24,10 +24,14 @@ const VideoGameApi = () => {
 
   return (
     <div>
-      <h1>Video Games!</h1>
-      <div>
+      <h1 className='text-6xl'>Video Games!</h1>
+      <div className='mt-2'>
         {allGames.map((game) => (
-          <div key={game.id}>{game.name}</div>
+          <div key={game.id} className='mt-4' >
+            <div className='border-red-500 border-4 inline-block p-2 font-bold'>Title: {game.name}</div>
+            <div className='border-blue-500 border-4 inline-block p-2'>First Released: {game.firstReleaseDate}</div>
+            <div className='border-green-500 border-4 inline-block p-2'>Top Critic Score: {game.topCriticScore}</div>
+          </div>
         ))}
       </div>
     </div>
