@@ -6,12 +6,12 @@ import { useState, useEffect } from 'react'
 const Pagination = async () => {
   const [data, setData] = useState('');
 
-  useEffect(async () => {
-    const allGames = await fetchVideoGames()
+  // useEffect(async () => {
+  //   const allGames = await fetchVideoGames()
 
-    setData(allGames)
-    console.log(data)
-  },[])
+  //   setData(allGames)
+  //   console.log(data)
+  // },[])
  
 
   return (

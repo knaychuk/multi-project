@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/navigation'
 
-const ProjectCard = ({ title, img, date, url }) => {
+const ProjectCard = ({ title, img, date, url, textSize }) => {
   return (
     <div className="outline-black outline-3 outline p-36 relative">
       <a href={url}>
