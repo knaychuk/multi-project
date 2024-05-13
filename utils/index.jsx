@@ -19,3 +19,22 @@ export async function fetchVideoGames() {
   }
   
 }
+
+export async function fetchVideoGame(gameId) {
+  const url = `https://opencritic-api.p.rapidapi.com/game/${gameId}`;
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '59df2c6d4fmsh00f279fccc7fee5p15be1cjsn712e91cbaf90',
+      'X-RapidAPI-Host': 'opencritic-api.p.rapidapi.com'
+    }
+};
+
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+  }
+}
