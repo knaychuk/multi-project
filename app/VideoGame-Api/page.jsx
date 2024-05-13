@@ -2,6 +2,7 @@
 
 import { fetchVideoGames } from '@/utils'
 import { useState, useEffect } from 'react' 
+import Link from 'next/link'
 
 const VideoGameApi = () => {
   const [allGames, setAllGames] = useState([]);
@@ -27,10 +28,13 @@ const VideoGameApi = () => {
       <h1 className='text-6xl'>Video Games!</h1>
       <div className='mt-2'>
         {allGames.map((game) => (
-          <div key={game.id} className='mt-4' >
-            <div className='border-red-500 border-4 inline-block p-2 font-bold'>Title: {game.name}</div>
-            <div className='border-blue-500 border-4 inline-block p-2'>First Released: {game.firstReleaseDate}</div>
-            <div className='border-green-500 border-4 inline-block p-2'>Top Critic Score: {game.topCriticScore}</div>
+          
+            // <Link href={`/VideoGame-Api/${game.id}`}>
+            //   <p>{game.title}</p>
+            // </Link>
+          <div>
+            <h1>Game {game.name}</h1>
+            <Link href={`/VideoGame-Api/${game.id}`}>More Info</Link>
           </div>
         ))}
       </div>
