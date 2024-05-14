@@ -1,41 +1,47 @@
 'use client'
 
-import { fetchVideoGames } from "@/utils";
+import { fetchVideoGame, fetchVideoGames } from "@/utils";
 import { useState, useEffect } from "react";
 
+import Link from "next/link";
+
 const page = () => {
-  const [allGames, setAllGames] = useState([]);
+
+  const [game, setGame] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const games = await fetchVideoGames()
-        setAllGames(games)
+        if(id) {
+        const game = await fetchVideoGame()
+        setGame(game)
+        }
       } catch(err) {
         console.error(err)
+        setGame(null)
       }
     }
 
     fetchData();
-    console.log(allGames)
+    console.log(game)
   }, [])
 
-  console.log(allGames)
+  console.log(game)
 
   return (
     <div>
       <h1 className='text-6xl'>Video Games!</h1>
       <div className='mt-2'>
-        {allGames.map((game) => (
-          
-            // <Link href={`/VideoGame-Api/${game.id}`}>
-            //   <p>{game.title}</p>
-            // </Link>
+       
           <div>
-            <h1>Game {game.name}</h1>
-            <Link href={`/VideoGame-Api/${game.id}`}>More Info</Link>
+            {game && (
+              <div>
+                <h1>Game Details for {game.name}</h1>
+              </div>
+            )}
+
           </div>
-        ))}
+    
       </div>
     </div>
   )
