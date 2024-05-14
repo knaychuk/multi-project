@@ -12,10 +12,9 @@ const page = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        if(id) {
-        const game = await fetchVideoGame()
+        const game = await fetchVideoGame('4504')
         setGame(game)
-        }
+      
       } catch(err) {
         console.error(err)
         setGame(null)
@@ -29,21 +28,17 @@ const page = () => {
   console.log(game)
 
   return (
-    <div>
-      <h1 className='text-6xl'>Video Games!</h1>
-      <div className='mt-2'>
-       
-          <div>
-            {game && (
-              <div>
-                <h1>Game Details for {game.name}</h1>
-              </div>
-            )}
 
-          </div>
-    
-      </div>
+    <div>
+      {game && (
+        <div>
+          <h1 className="text-4xl">Game Details for {game.name}</h1>
+          <p> {game.description} </p>
+        </div>
+      )}
+
     </div>
+  
   )
 }
 export default page
