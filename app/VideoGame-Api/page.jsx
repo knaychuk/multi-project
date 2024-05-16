@@ -28,7 +28,9 @@ const VideoGameApi = () => {
   return (
     <div>
       <h1 className='text-6xl text-center m-10'>Video Games!</h1>
-      <Image className="absolute left-10 top-10 hover:size-14 cursor-pointer" src="/back-arrow.png" width={50} height={50}/>
+      <a href="/" >
+        <Image src="/back-arrow.png" alt="" width={50} height={50} className="absolute left-10 top-10 hover:size-14 cursor-pointer"/>
+      </a>
       <div className='grid grid-cols-4 gap-4 mx-4'>
         {allGames.map((game) => (
           <div className='border-black border-2 text-center p-10'>
