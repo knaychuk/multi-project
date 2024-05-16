@@ -5,14 +5,14 @@ import { useState, useEffect } from "react";
 
 import Link from "next/link";
 
-const page = () => {
+const page = ({ params }) => {
 
   const [game, setGame] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const game = await fetchVideoGame('4504')
+        const game = await fetchVideoGame(params.id)
         setGame(game)
       
       } catch(err) {
@@ -25,7 +25,7 @@ const page = () => {
     console.log(game)
   }, [])
 
-  console.log(game)
+  console.log(params.id)
 
   return (
 

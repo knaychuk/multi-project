@@ -4,6 +4,7 @@ import { fetchVideoGames } from '@/utils'
 import { useState, useEffect } from 'react' 
 import Link from 'next/link'
 
+
 const VideoGameApi = () => {
   const [allGames, setAllGames] = useState([]);
 
