@@ -34,9 +34,9 @@ const VideoGameApi = () => {
       </a>
       <div className='grid grid-cols-4 gap-4 mx-4'>
         {allGames.map((game) => (
-          <div className='border-black border-2 text-center p-10'>
-        
-            <h1 className='text-2xl m-5'>Game {game.name}</h1>
+          <div className='border-black border-2 text-center p-10 mb-5'>
+            <Image src={`https://img.opencritic.com/${game.images.banner.sm}`} width={50} height={50} />
+            <h1 className='text-2xl m-5'>{game.name}</h1>
             <Link href={`/VideoGame-Api/${game.id}`} className='bg-blue-500 text-white p-2 hover:bg-blue-700'>More Info</Link>
             {console.log(game.images.banner.sm)}
           </div>

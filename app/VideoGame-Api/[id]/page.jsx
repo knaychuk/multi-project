@@ -31,7 +31,7 @@ const page = ({ params }) => {
   return (
 
     <div>
-      <a href="/" >
+      <a href="/VideoGame-Api" >
         <Image src="/back-arrow.png" alt="" width={50} height={50} className="absolute left-10 top-10 hover:size-14 cursor-pointer"/>
       </a>
       {game && (
